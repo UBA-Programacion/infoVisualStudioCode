@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Super Chuleta de Visual Studio Code (Windows)</title>
+
+    <style>
+        /* (Selector Universal) Resetea márgenes y paddings de todos los elementos. */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Configuración general del cuerpo de la página (MODO OSCURO) */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6; /* Espaciado entre líneas */
+            
+            /* Colores base del modo oscuro */
+            background-color: #121212; /* Fondo principal (muy oscuro) */
+            color: #e0e0e0; /* Color de texto principal (blanco grisáceo) */
+            
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Contenedor principal para centrar el contenido (MODO OSCURO) */
+        main {
+            max-width: 900px; /* Ancho máximo */
+            margin: 20px auto; /* Centra el contenedor */
+            padding: 25px 40px; /* Relleno interior */
+            
+            /* Color de fondo del "papel" (un poco más claro que el fondo) */
+            background-color: #1e1e1e; 
+            
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+        }
+
+        /* Estilos para los títulos (MODO OSCURO) */
+        h1, h2, h3 {
+            color: #ffffff; /* Títulos en blanco puro para más contraste */
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #333333; 
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            /* Línea divisoria sutil para modo oscuro */
+            border-bottom: 2px solid #333333; 
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #4dabf7; /* Color azul claro (buen contraste en oscuro) */
+            margin-top: 30px;
+        }
+
+        /* Estilo para los bloques de código (preformateado) */
+        pre {
+            background-color: #2d2d2d; /* Fondo oscuro */
+            color: #f1f1f1; /* Texto claro */
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto; /* Scroll horizontal si el código es largo */
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95em;
+        }
+        
+        /* Estilo para los comentarios DENTRO del bloque de código */
+        pre .comment {
+            color: #6a9955; /* Color verde para comentarios */
+            font-style: italic;
+        }
+
+        /* Código en línea (dentro de párrafos, listas, etc.) (MODO OSCURO) */
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #333333; /* Fondo gris oscuro */
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #f1f1f1; /* Texto claro */
+        }
+        
+        /* Corrección para que 'code' dentro de 'pre' no tenga el fondo gris */
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            color: inherit; /* Hereda el color de su padre 'pre' */
+        }
+
+        /* Estilos para las tablas (MODO OSCURO) */
+        table {
+            width: 100%; /* Ocupa todo el ancho */
+            border-collapse: collapse; /* Bordes pegados */
+            margin-top: 20px;
+        }
+
+        /* Celdas (th y td) (MODO OSCURO) */
+        th, td {
+            border: 1px solid #444444; /* Borde gris oscuro */
+            padding: 12px 15px; /* Relleno interno */
+            text-align: left; /* Alineación */
+        }
+
+        /* Cabecera de la tabla (th) (MODO OSCURO) */
+        th {
+            background-color: #2a2a2a; /* Fondo de cabecera oscuro */
+            font-weight: 600; /* Negrita */
+        }
+
+        /* Estilo "cebra" para filas (MODO OSCURO) */
+        tbody tr:nth-child(even) {
+            background-color: #252525; /* Gris un poco más claro */
+        }
+
+        /* Estilos para listas (ordenadas y desordenadas) */
+        ul, ol {
+            padding-left: 25px; /* Sangría */
+        }
+
+        li {
+            margin-bottom: 10px; /* Espacio entre ítems de lista */
+        }
+
+        /* Estilo para citas (MODO OSCURO) */
+        blockquote {
+            border-left: 5px solid #4dabf7; /* Barra lateral azul claro */
+            background-color: #2a2a2a; /* Fondo gris oscuro */
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #c7c7c7; /* Texto de la cita ligeramente atenuado */
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <header>
+            <h1>🚀 Super Chuleta de Visual Studio Code (Windows)</h1>
+            <p>Tu guía de ayuda memoria definitiva. Domina las funciones más potentes de VS Code: multicursores, snippets, Emmet, Git y más.</p>
+        </header>
+
+        <section id="multicursores">
+            
+            <h2>🖱️ 1. Multicursores y Selección Múltiple</h2>
+            
+            <p>Los multicursores permiten múltiples ediciones simultáneas. A continuación, todos los métodos para posicionar cursores en Windows:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Acción</th>
+                        <th>Atajo (Windows)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Agregar cursor arriba/abajo</td>
+                        <td><code>Shift + Alt + ↑ / ↓</code></td>
+                    </tr>
+                    <tr>
+                        <td>Seleccionar siguiente palabra igual</td>
+                        <td><code>Ctrl + D</code></td>
+                    </tr>
+                    <tr>
+                        <td>Seleccionar todas las palabras iguales</td>
+                        <td><code>Ctrl + Shift + L</code></td>
+                    </tr>
+                    <tr>
+                        <td>Poner cursor en cada línea de una selección vertical</td>
+                        <td><code>Ctrl + Alt + I</code></td>
+                    </tr>
+                    <tr>
+                        <td>Agregar cursor con mouse en cualquier posición</td>
+                        <td><code>Ctrl + Click</code></td>
+                    </tr>
+                    <tr>
+                        <td>Eliminar cursores extra</td>
+                        <td><code>Ctrl + Click</code> (sobre un cursor duplicado)</td>
+                    </tr>
+                    <tr>
+                        <td>Seleccionar columna vertical (modo bloque)</td>
+                        <td><code>Shift + Alt + (Arrastrar mouse)</code></td>
+                    </tr>
+                </tbody>
+            </table>
+            <blockquote>
+                <strong>Ejemplo práctico:</strong><br>
+                <pre>const nombreUsuario = "Ana";
+const nombreCliente = "Juan";
+const nombreEmpleado = "Luis";</pre>
+                <p style="margin-top: 10px; font-style: normal;">Coloca el cursor en "nombre", presiona <code>Ctrl + D</code> varias veces para seleccionar las otras ocurrencias y reemplázalos todos simultáneamente.</p>
+            </blockquote>
+        </section>
+        <section id="snippets">
+            <h2>✂️ 2. Cómo Crear y Usar Snippets</h2>
+            <p>Los snippets son fragmentos de código reutilizables que puedes insertar simplemente con un atajo (prefix + <code>Tab</code>).</p>
+
+            <h3>Paso a paso para crear un snippet:</h3>
+            <ol>
+                <li>En VS Code, ve a <strong>Archivo > Preferencias > Fragmentos de código del usuario</strong>.</li>
+                <li>Selecciona el lenguaje (ej. <code>javascript.json</code>) o crea uno global.</li>
+                <li>Agrega tu snippet en formato JSON.</li>
+            </ol>
+            
+            <h3>Ejemplo 1: Componente Funcional de React</h3>
+            <pre>
+<code>{
+  "React Function Component": {
+    "prefix": "rfc",
+    "body": [
+      "export function $1(props) {",
+      "  return (",
+      "    $2",
+      "  );",
+      "}"
+    ],
+    "description": "Crea un componente funcional de React"
+  }
+}</code>
+</pre>
+
+            <h3>Explicación línea por línea (del Snippet):</h3>
+            <ul>
+                <li><code>"React Function Component"</code>: Es el nombre de tu snippet (solo para ti, no afecta en nada).</li>
+                <li><code>"prefix": "rfc"</code>: ¡El más importante! Es el "atajo" que escribes en el editor (ej. <code>rfc</code>) antes de presionar <code>Tab</code>.</li>
+                <li><code>"body": [ ... ]</code>: Es el código que se va a insertar. Cada línea del array es una nueva línea de código.</li>
+                <li><code>"$1"</code>, <code>"$2"</code>: Son "paradas de tabulación" (Tab Stops). Cuando insertas el snippet, tu cursor saltará primero a <code>$1</code>. Cuando presiones <code>Tab</code> de nuevo, saltará a <code>$2</code>. <code>$0</code> (si lo pones) es la posición final.</li>
+                <li><code>"description"</code>: Es el texto de ayuda que aparece en el menú de sugerencias de VS Code.</li>
+            </ul>
+
+            <blockquote>
+                <strong>Tips Avanzados de Snippets:</strong><br>
+                <ul>
+                    <li style="margin-bottom: 10px;"><strong>Placeholders (Texto por defecto):</strong> Usa <code>${1:texto}</code>. El cursor seleccionará "texto" para que lo reemplaces.</li>
+                    <li style="margin-bottom: 10px;"><strong>Choices (Opciones):</strong> Usa <code>${1|uno,dos,tres|}</code>. Te dará un menú desplegable para elegir.</li>
+                    <li><strong>Variables Útiles:</strong> <code>${TM_SELECTED_TEXT}</code> (texto seleccionado), <code>${TM_CURRENT_LINE}</code> (línea actual), <code>${TM_FILENAME}</code> (nombre del archivo).</li>
+                </ul>
+            </blockquote>
+            
+        </section>
+        <section id="emmet">
+            <h2>⚡ 3. Atajos de Emmet para HTML y CSS</h2>
+            <p>Emmet es un "superpoder" que viene en VS Code. Te permite escribir abreviaturas que se expanden en código HTML y CSS completo. Solo escribe la abreviatura y pulsa <code>Tab</code>.</p>
+
+            <blockquote>
+                <strong>¡El más famoso!</strong> Escribe <code>!</code> y presiona <code>Tab</code> en un archivo HTML vacío para generar la plantilla base de HTML5.
+            </blockquote>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Abreviatura</th>
+                        <th>Expansión (Resultado)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>div.container</code></td>
+                        <td><code>&lt;div class="container"&gt;&lt;/div&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>ul>li.item$*3</code></td>
+                        <td>Genera una <code>&lt;ul&gt;</code> con 3 <code>&lt;li&gt;</code> con clases <code>item1</code>, <code>item2</code>, <code>item3</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>h1{Título}+p{Descripción}</code></td>
+                        <td>Crea ambos elementos, uno detrás del otro, con texto.</td>
+                    </tr>
+                    <tr>
+                        <td><code>d:f fd:c ai:c</code> (en CSS)</td>
+                        <td><code>display:flex; flex-direction:column; align-items:center;</code></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Explicación de la Sintaxis de Emmet:</h3>
+             <ul>
+                <li><code>></code> (Hijo): Pone el siguiente elemento *dentro*. Ej: <code>ul>li</code> → <code>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</code></li>
+                <li><code>+</code> (Hermano): Pone el siguiente elemento *después*, al mismo nivel. Ej: <code>h1+p</code> → <code>&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;</code></li>
+                <li><code>.</code> (Clase): Añade una clase CSS. Ej: <code>p.aviso</code> → <code>&lt;p class="aviso"&gt;&lt;/p&gt;</code></li>
+                <li><code>*</code> (Multiplicación): Repite un elemento. Ej: <code>li*5</code> → 5 <code>&lt;li&gt;</code></li>
+                <li><code>$</code> (Numeración): Pone un número que se incrementa. Ej: <code>li.item$*3</code> → <code>item1</code>, <code>item2</code>, <code>item3</code>.</li>
+                <li><code>^</code> (Subir nivel): Sube un nivel en la jerarquía. Ej: <code>div>p^span</code> → <code>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;span&gt;&lt;/span&gt;</code></li>
+                <li><code>{}</code> (Texto): Inserta texto dentro de la etiqueta. Ej: <code>h1{Hola}</code> → <code>&lt;h1&gt;Hola&lt;/h1&gt;</code></li>
+            </ul>
+
+            <blockquote>
+                <strong>Tip:</strong> Para habilitar Emmet en otros lenguajes (como React JSX), agrega a tu <code>settings.json</code>:
+                <pre style="margin-top:10px;">"emmet.includeLanguages": { "javascript": "html", "vue": "html" }</pre>
+            </blockquote>
+        </section>
+        <section id="atajos">
+            <h2>⌨️ 4. Atajos de Teclado Clave (Windows)</h2>
+            <p>Funciones esenciales para acelerar tu flujo de trabajo diario.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Función</th>
+                        <th>Atajo (Windows)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Paleta de comandos</strong> (El más importante)</td>
+                        <td><code>Ctrl + Shift + P</code></td>
+                    </tr>
+                    <tr>
+                        <td>Buscar en este archivo</td>
+                        <td><code>Ctrl + F</code></td>
+                    </tr>
+                    <tr>
+                        <td>Reemplazar en este archivo</td>
+                        <td><code>Ctrl + H</code></td>
+                    </tr>
+                    <tr>
+                        <td>Ir a archivo (búsqueda rápida)</td>
+                        <td><code>Ctrl + P</code></td>
+                    </tr>
+                     <tr>
+                        <td>Ir a línea específica</td>
+                        <td><code>Ctrl + G</code></td>
+                    </tr>
+                    <tr>
+                        <td>Ir a definición de función/variable</td>
+                        <td><code>F12</code></td>
+                    </tr>
+                    <tr>
+                        <td>Abrir/Cerrar la Terminal</td>
+                        <td><code>Ctrl + Shift + `</code> (o <code>Ctrl + ñ</code>)</td>
+                    </tr>
+                    <tr>
+                        <td>Cortar línea (sin seleccionar nada)</td>
+                        <td><code>Ctrl + X</code></td>
+                    </tr>
+                    <tr>
+                        <td>Duplicar línea actual</td>
+                        <td><code>Shift + Alt + Down</code></td>
+                    </tr>
+                    <tr>
+                        <td>Desplazar línea (moverla arriba/abajo)</td>
+                        <td><code>Alt + Up/Down</code></td>
+                    </tr>
+                    <tr>
+                        <td>Renombrar símbolo (variable, función, etc.)</td>
+                        <td><code>F2</code></td>
+                    </tr>
+                    <tr>
+                        <td>Formatear código (con Prettier, etc.)</td>
+                        <td><code>Shift + Alt + F</code></td>
+                    </tr>
+                </tbody>
+            </table>
+            <blockquote>
+                Recuerda que puedes personalizar todos estos atajos en <strong>Archivo > Preferencias > Atajos de teclado</strong>.
+            </blockquote>
+        </section>
+        <section id="git">
+            <h2>🌿 5. Cómo trabajar con GitHub</h2>
+            <p>VS Code tiene una integración fantástica con Git. Abre la barra lateral de <strong>Control de código fuente</strong> o usa <code>Ctrl + Shift + G</code>.</p>
+            <ul>
+                <li><strong>Inicializa</strong> un repositorio con el botón o ejecutando <code>git init</code> en la terminal integrada.</li>
+                <li><strong>Clona</strong> repositorios usando la Paleta de Comandos (<code>Ctrl + Shift + P</code>) y el comando <strong>Git: Clone</strong>.</li>
+                <li><strong>Haz cambios y "Commit"</strong> desde la interfaz gráfica, agregando un mensaje y cliqueando el icono de check (✓).</li>
+                <li><strong>Sincroniza</strong> con <strong>Push/Pull</strong> usando los botones en la barra de estado (abajo) o en el menú (...).</li>
+                <li><strong>Revisa diferencias</strong> con clic derecho sobre un archivo > "Comparar con HEAD".</li>
+                <li><strong>Extensiones:</strong> Usa <code>GitLens</code> (para ver quién modificó cada línea) y <code>Git Graph</code> (para un árbol visual de ramas).</li>
+            </ul>
+        </section>
+        <section id="copilot">
+            <h2>🤖 6. Cómo usar GitHub Copilot</h2>
+            <p>Integra el asistente de IA de GitHub para autocompletar código de forma inteligente.</p>
+            <ol>
+                <li>Instala la extensión <strong>GitHub Copilot</strong> desde el Marketplace.</li>
+                <li>Inicia sesión con tu cuenta de GitHub y autoriza Copilot.</li>
+                <li>Simplemente escribe código o comentarios (ej. <code>// Función que revierta un string</code>).</li>
+                <li>Copilot sugerirá autocompletados. Acepta las sugerencias con <code>Tab</code>.</li>
+                <li>Utilízalo para autocompletar funciones, escribir tests, maquetar HTML y acelerar tu productividad.</li>
+            </ol>
+        </section>
+        <section id="settings">
+            <h2>⚙️ 7. Archivo avanzado <code>settings.json</code> (Comentado)</h2>
+            <p>Puedes personalizar VS Code a fondo editando este archivo. Para abrirlo: <strong>Archivo > Preferencias > Configuración</strong> > y haz clic en el icono de "Abrir settings.json" (arriba a la derecha).</p>
+            
+            <p>Ejemplo de configuración con buenas prácticas:</p>
+
+            <pre>
+<code>{
+  <span class="comment">// --- Apariencia ---</span>
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.iconTheme": "vscode-icons",
+
+  <span class="comment">// --- Editor de Texto ---</span>
+  "editor.fontFamily": "'Fira Code', 'Roboto', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.cursorBlinking": "smooth",
+  "editor.minimap.enabled": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.snippetSuggestions": "top",
+  "editor.tabCompletion": "on",
+
+  <span class="comment">// --- Emmet ---</span>
+  "emmet.includeLanguages": { "javascript": "html", "vue": "html" },
+  "emmet.triggerExpansionOnTab": true,
+
+  <span class="comment">// --- Guardado y Formato ---</span>
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 800,
+
+  <span class="comment">// --- Integraciones (Git, Copilot) ---</span>
+  "github.copilot.enable": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+
+  <span class="comment">// --- Explorador de Archivos ---</span>
+  "explorer.confirmDelete": false
+}
+</code></pre>
+            
+            <h3>Explicación línea por línea (de <code>settings.json</code>):</h3>
+            <ul>
+                <li><code>"workbench.colorTheme"</code>: Define tu tema de color (ej. "Monokai", "Solarized Dark").</li>
+                <li><code>"workbench.iconTheme"</code>: El tema para los iconos de archivos (ej. "vscode-icons").</li>
+                <li><code>"editor.fontFamily"</code>: La fuente que usas. 'Fira Code' es popular por las "ligaduras".</li>
+                <li><code>"editor.fontLigatures"</code>: Activa las ligaduras (une <code>=></code> en una sola flecha, <code>!=</code> en un no-igual, etc.).</li>
+                <li><code>"editor.fontSize"</code>: Tamaño de la letra en el editor.</li>
+                <li><code>"editor.cursorBlinking"</code>: Animación del parpadeo del cursor.</li>
+                <li><code>"editor.minimap.enabled"</code>: Muestra o esconde el minimapa a la derecha.</li>
+                <li><code>"editor.snippetSuggestions"</code>: Pone las sugerencias de snippets (tus atajos) al principio de la lista.</li>
+                <li><code>"editor.tabCompletion"</code>: Permite autocompletar sugerencias presionando <code>Tab</code>.</li>
+                <li><code>"emmet.includeLanguages"</code>: Permite que Emmet funcione en archivos de JavaScript (para JSX) y Vue.</li>
+                <li><code>"editor.formatOnSave"</code>: ¡Esencial! Formatea (ordena) tu código automáticamente cada vez que guardas. Necesitas una extensión como "Prettier".</li>
+                <li><code>"files.autoSave"</code>: Guarda el archivo automáticamente ("afterDelay" = después de un tiempo).</li>
+                <li><code>"files.autoSaveDelay"</code>: Milisegundos que espera antes de autoguardar (800ms = 0.8 segundos).</li>
+                <li><code>"github.copilot.enable"</code>: Activa o desactiva Copilot.</li>
+                <li><code>"git.autofetch"</code>: Busca automáticamente nuevos cambios en el repositorio remoto.</li>
+                <li><code>"git.confirmSync"</code>: <code>false</code> evita que te pregunte "Estás seguro?" al hacer Push/Pull.</li>
+                <li><code>"explorer.confirmDelete"</code>: <code>false</code> evita que te pregunte "Estás seguro?" al borrar un archivo (¡úsalo con cuidado!).</li>
+            </ul>
+        </section>
+        </main>
+
+        <style>
+        /* (Selector Universal) Resetea márgenes y paddings. */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Configuración general del cuerpo de la página (MODO OSCURO) */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6; /* Espaciado entre líneas */
+            background-color: #121212; /* Fondo principal (muy oscuro) */
+            color: #e0e0e0; /* Color de texto principal (blanco grisáceo) */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Contenedor principal para centrar el contenido (MODO OSCURO) */
+        main {
+            max-width: 900px; /* Ancho máximo */
+            margin: 20px auto; /* Centra el contenedor */
+            padding: 25px 40px; /* Relleno interior */
+            background-color: #1e1e1e; /* Color de fondo del "papel" */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+        }
+
+        /* Estilos para los títulos (MODO OSCURO) */
+        h1, h2, h3 {
+            color: #ffffff; /* Títulos en blanco puro */
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #333333; 
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid #333333; 
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #4dabf7; /* Color azul claro */
+            margin-top: 30px;
+        }
+
+        /* Estilo para los bloques de código (preformateado) */
+        pre {
+            background-color: #2d2d2d;
+            color: #f1f1f1;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto; /* Scroll horizontal */
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95em;
+        }
+
+        /* Código en línea (dentro de párrafos, listas, etc.) (MODO OSCURO) */
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #333333; /* Fondo gris oscuro */
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #f1f1f1;
+        }
+        
+        /* Corrección para 'code' dentro de 'pre' */
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            color: inherit;
+        }
+
+        /* Estilos para las tablas (MODO OSCURO) */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #444444; /* Borde gris oscuro */
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2a2a2a; /* Fondo de cabecera oscuro */
+            font-weight: 600;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #252525; /* Gris un poco más claro */
+        }
+
+        /* Estilos para listas */
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 10px; /* Espacio entre ítems de lista */
+        }
+
+        /* Estilo para citas (MODO OSCURO) */
+        blockquote {
+            border-left: 5px solid #4dabf7; /* Barra lateral azul claro */
+            background-color: #2a2a2a;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #c7c7c7;
+        }
+    </style>
+
+
+
+
+    <main>
+
+        <header>
+            <h1>🚀 Super Chuleta de GitHub + VS Code (Windows)</h1>
+            <p>Tu guía de ayuda memoria definitiva para usar el control de versiones Git directamente desde Visual Studio Code.</p>
+        </header>
+
+        <section id="setup">
+            
+            <h2>⚙️ 1. Configuración Inicial (Solo una vez)</h2>
+            
+            <p>Antes de empezar, abre la terminal de VS Code (<code>Ctrl + ñ</code>) y dile a Git quién eres. Esto es obligatorio.</p>
+            
+            <pre>
+<code>git config --global user.name "Tu Nombre"
+
+git config --global user.email "tu_email@github.com"</code></pre>
+            
+            <blockquote>
+                <strong>El Panel de Git:</strong> Tu centro de mando es el icono de "Control de código fuente" en la barra lateral izquierda. También puedes abrirlo con <code>Ctrl + Shift + G</code>.
+                
+            </blockquote>
+        </section>
+        <section id="inicio">
+            <h2>🚀 2. Empezar un Proyecto (Dos Caminos)</h2>
+            
+            <h3>Opción A: Clonar un Repositorio Existente (Lo más común)</h3>
+            <p>Trae un proyecto de GitHub a tu PC.</p>
+            <ol>
+                <li>Abre la Paleta de Comandos: <code>Ctrl + Shift + P</code>.</li>
+                <li>Escribe <code>Git: Clone</code> y presiona Enter.</li>
+                <li>Pega la URL del repositorio de GitHub (ej. <code>https://github.com/usuario/proyecto.git</code>).</li>
+                <li>Elige una carpeta en tu PC donde guardarlo.</li>
+            </ol>
+
+            <h3>Opción B: Iniciar un Repositorio Nuevo (Para proyectos nuevos)</h3>
+            <p>Convierte tu carpeta de proyecto actual en un repositorio de Git.</p>
+            <ol>
+                <li>Abre la carpeta de tu proyecto en VS Code.</li>
+                <li>Ve al panel de "Control de código fuente" (<code>Ctrl + Shift + G</code>).</li>
+                <li>Haz clic en el botón azul que dice <strong>"Initialize Repository" (Inicializar repositorio)</strong>.</li>
+            </ol>
+        </section>
+        <section id="workflow">
+            <h2>💾 3. El Flujo de Trabajo Básico (Tu día a día)</h2>
+            <p>Este es el ciclo que repetirás constantemente. Son 3 pasos:</p>
+
+            <ol>
+                <li>
+                    <strong>Paso 1: Haces cambios</strong>
+                    <p>Simplemente trabaja en tus archivos. VS Code te mostrará los archivos modificados en el panel de Git.</p>
+                </li>
+                <li>
+                    <strong>Paso 2: Preparas los cambios (Stage)</strong>
+                    <p>Le dices a Git "estos son los cambios que quiero guardar". En el panel de Git, haz clic en el icono <code>+</code> (más) junto a cada archivo que quieras incluir.</p>
+                </li>
+                <li>
+                    <strong>Paso 3: Confirmas los cambios (Commit)</strong>
+                    <p>Guardas los cambios "preparados" con un mensaje que explique qué hiciste.</p>
+                    <ul>
+                        <li>Escribe tu mensaje en la caja de texto (ej. "Arreglado el bug del formulario").</li>
+                        <li>Haz clic en el icono de <strong>check (✓)</strong> para confirmar el "commit".</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+        <section id="sync">
+            <h2>☁️ 4. Sincronizar con GitHub (Subir y Bajar)</h2>
+            <p>Una vez que tienes "commits" guardados localmente, necesitas sincronizarlos con GitHub.</p>
+
+            <h3>Push (Subir cambios ⬆️)</h3>
+            <p>Envía tus "commits" locales (los que acabas de hacer) al repositorio de GitHub.</p>
+            <ul>
+                <li>Usa el menú (<code>...</code>) en el panel de Git y selecciona <strong>"Push"</strong>.</li>
+                <li>O usa el comando en la terminal: <code>git push</code></li>
+            </ul>
+
+            <h3>Pull (Bajar cambios ⬇️)</h3>
+            <p>Trae los cambios que otras personas hayan subido a GitHub (siempre haz esto antes de empezar a trabajar).</p>
+            <ul>
+                <li>Usa el menú (<code>...</code>) y selecciona <strong>"Pull"</strong>.</li>
+                <li>O usa el comando en la terminal: <code>git pull</code></li>
+            </ul>
+
+            <blockquote>
+                <strong>El Botón Mágico: "Sincronizar Cambios"</strong><br>
+                En la barra de estado (abajo a la izquierda), verás un botón con unas flechas 🔄. Este botón es inteligente: primero hace "Pull" (baja cambios) y luego "Push" (sube los tuyos). ¡Es la forma más segura y recomendada de mantener todo al día!
+            </blockquote>
+        </section>
+        <section id="branches">
+            <h2>🌿 5. Trabajo con Ramas (Branches)</h2>
+            <p>Las ramas te permiten trabajar en una nueva función (ej. "login") sin romper la rama principal (`main`).</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Acción</th>
+                        <th>Cómo hacerlo en VS Code (UI)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ver tu rama actual</strong></td>
+                        <td>Mira en la <strong>esquina inferior izquierda</strong> de VS Code. Verás el nombre (ej. <code>main</code>).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Crear una rama nueva</strong></td>
+                        <td>1. Haz clic en el nombre de la rama actual (abajo a la izquierda).<br>2. Elige <strong>"Crear nueva rama..."</strong> en el menú de arriba.<br>3. Escribe el nombre (ej. <code>feature/login</code>) y presiona Enter.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cambiar de rama</strong></td>
+                        <td>1. Haz clic en el nombre de la rama actual (abajo a la izquierda).<br>2. Elige la rama a la que quieres saltar de la lista.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fusionar ramas (Merge)</strong></td>
+                        <td>1. Cambia a la rama que quieres *recibir* los cambios (ej. <code>main</code>).<br>2. Abre la Paleta de Comandos (<code>Ctrl + Shift + P</code>).<br>3. Escribe <code>Git: Merge Branch...</code> (Fusionar rama).<br>4. Elige la rama que quieres *fusionar* (ej. <code>feature/login</code>).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="extensions">
+            <h2>🛠️ 6. Extensiones Esenciales de Git</h2>
+            <p>Estas extensiones llevan tu experiencia de Git en VS Code a otro nivel. Instálalas desde el panel de Extensiones (<code>Ctrl + Shift + X</code>).</p>
+            
+            <ul>
+                <li>
+                    <strong>GitLens</strong>
+                    <p>La extensión MÁS IMPORTANTE. Te permite ver quién escribió cada línea de código (culpar a alguien), ver el historial de un archivo, comparar ramas y mucho más. Es imprescindible.</p>
+                </li>
+                <li>
+                    <strong>Git Graph</strong>
+                    <p>Muestra un gráfico visual muy bonito de tu historial de "commits" y ramas. Es perfecto para entender qué está pasando en proyectos complejos.</p>
+                </li>
+                <li>
+                    <strong>GitHub Pull Requests and Issues</strong>
+                    <p>Te permite crear, revisar y aprobar "Pull Requests" (solicitudes de fusión) directamente desde VS Code, sin tener que abrir la página web de GitHub.</p>
+                </li>
+            </ul>
+        </section>
+        </main>
+    </body>
+</html>
